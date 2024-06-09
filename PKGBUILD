@@ -1,28 +1,52 @@
-# Maintainer: Jingu <xiuluo dot android at gmail dot com>
-# Contributor: TimeTrap <zhaoyuanpan at gmail dot com>
-pkgname=cursor-bin
-_pkgname=Cursor
-pkgver=0.2.31
-pkgrel=1
-pkgdesc="Write, edit, and chat about your code with GPT-4.(AppImage)"
-arch=('x86_64')
-url="https://cursor.so"
-license=('custom')
-options=('!strip')
-depends=('hicolor-icon-theme' 'zlib')
-source=("${_pkgname}-${pkgver}.AppImage::https://dl.todesktop.com/230313mzl4w4u92/linux/appImage/x64")
-sha256sums=('e58f1ece92b7c9278047191ee3b503322fc7c7a9b702865fb718cf39a528849d')
-_install_path="/opt/appimages"
+# Maintainer: Your Name <your.email@example.com>
 
-prepare() {
-    chmod a+x "${_pkgname}-${pkgver}.AppImage"
-    "./${_pkgname}-${pkgver}.AppImage" --appimage-extract > /dev/null
-    sed 's/AppRun/\/opt\/appimages\/Cursor.AppImage/g' -i "${srcdir}/squashfs-root/${_pkgname}.desktop"
-}
+pkgname=cursor-bin
+pkgver=0.35.0
+pkgrel=1
+pkgdesc="Cursor App - AI-first coding environment"
+arch=('x86_64')
+url="https://downloader.cursor.sh"
+license=('custom:Proprietary')  # Replace with the correct license if known
+depends=('fuse2')
+options=(!strip)
+source_x86_64=(
+    "cursor-${pkgver}.AppImage::https://downloader.cursor.sh/linux/appImage/x64"
+    "cursor.png"
+)
+noextract=("cursor-${pkgver}.AppImage")
+sha256sums_x86_64=(
+    '16ccbd3953f8bebc8b1cdb5c3c97f4bd0bc2baee0d10f0d3376ae05cedd99f0a'  # Checksum for cursor-0.35.0.AppImage
+    'e36f44c1fb0b0f0db14a6f35a1808ca85b5d353fc7c662c0b808a4de79987ea1'  # Checksum for cursor.png
+)
+
 package() {
-    install -Dm755 "${srcdir}/${_pkgname}-${pkgver}.AppImage" "${pkgdir}/${_install_path}/${_pkgname}.AppImage"
-    for _icons in 32x32 64x64 128x128 256x256 512x512;do
-        install -Dm644 "${srcdir}/squashfs-root/usr/share/icons/hicolor/${_icons}/apps/${_pkgname}.png" "${pkgdir}/usr/share/icons/hicolor/${_icons}/apps/${_pkgname}.png"
-    done
-    install -Dm644 "${srcdir}/squashfs-root/${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+    install -Dm755 "${srcdir}/cursor-${pkgver}.AppImage" "${pkgdir}/opt/${pkgname}/${pkgname}.AppImage"
+
+    # Symlink executable to be called 'cursor'
+    mkdir -p "${pkgdir}/usr/bin"
+    ln -s "/opt/${pkgname}/${pkgname}.AppImage" "${pkgdir}/usr/bin/cursor"
+
+    # Install the icon
+    install -Dm644 "${srcdir}/cursor.png" "${pkgdir}/usr/share/icons/hicolor/512x512/apps/cursor.png"
+
+    # Create a .desktop Entry
+    mkdir -p "${pkgdir}/usr/share/applications"
+    cat <<EOF > "${pkgdir}/usr/share/applications/cursor.desktop"
+[Desktop Entry]
+Name=Cursor
+Comment=Cursor is an AI-first coding environment.
+Exec=/usr/bin/cursor
+Terminal=false
+Type=Application
+Icon=cursor
+StartupWMClass=Cursor
+X-AppImage-Version=${pkgver}
+MimeType=x-scheme-handler/cursor;
+Categories=Utility;
+EOF
+}
+
+post_install() {
+    update-desktop-database -q
+    xdg-icon-resource forceupdate
 }
