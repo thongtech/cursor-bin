@@ -1,11 +1,11 @@
 # Maintainer: Your Name <your.email@example.com>
 
 pkgname=cursor-bin
-pkgver=0.35.0
+pkgver=0.37.1
 pkgrel=1
 pkgdesc="Cursor App - AI-first coding environment"
 arch=('x86_64')
-url="https://downloader.cursor.sh"
+url="https://www.cursor.com/"
 license=('custom:Proprietary')  # Replace with the correct license if known
 depends=('fuse2')
 options=(!strip)
@@ -14,10 +14,8 @@ source_x86_64=(
     "cursor.png"
 )
 noextract=("cursor-${pkgver}.AppImage")
-sha256sums_x86_64=(
-    '16ccbd3953f8bebc8b1cdb5c3c97f4bd0bc2baee0d10f0d3376ae05cedd99f0a'  # Checksum for cursor-0.35.0.AppImage
-    'e36f44c1fb0b0f0db14a6f35a1808ca85b5d353fc7c662c0b808a4de79987ea1'  # Checksum for cursor.png
-)
+sha256sums_x86_64=('185c89c0f4c84c7a9e593e6c2120547c26c9351d27c4227593fdfca3e9a6fc5e'
+                   'e36f44c1fb0b0f0db14a6f35a1808ca85b5d353fc7c662c0b808a4de79987ea1')
 
 package() {
     install -Dm755 "${srcdir}/cursor-${pkgver}.AppImage" "${pkgdir}/opt/${pkgname}/${pkgname}.AppImage"
