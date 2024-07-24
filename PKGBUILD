@@ -2,7 +2,7 @@
 
 pkgname=cursor-bin
 pkgver=0.38.0  # Updated to the latest version
-pkgrel=1
+pkgrel=2
 pkgdesc="Cursor App - AI-first coding environment"
 arch=('x86_64')
 url="https://www.cursor.com/"
@@ -48,8 +48,3 @@ post_install() {
     update-desktop-database -q
     xdg-icon-resource forceupdate
 }
-
-# Instructions for updating the package:
-# 1. Update the pkgver to the latest version.
-# 2. Run `updpkgsums` to update the checksums.
-# 3. Run `makepkg --printsrcinfo > .SRCINFO` to update the .SRCINFO file.
