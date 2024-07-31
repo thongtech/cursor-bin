@@ -1,8 +1,8 @@
 # Maintainer: Your Name <your.email@example.com>
 
 pkgname=cursor-bin
-pkgver=0.38.0  # Updated to the latest version
-pkgrel=2
+pkgver=0.38.1  # Updated to the latest version
+pkgrel=1
 pkgdesc="Cursor App - AI-first coding environment"
 arch=('x86_64')
 url="https://www.cursor.com/"
@@ -14,7 +14,7 @@ source_x86_64=(
     "cursor.png"
 )
 noextract=("cursor-${pkgver}.AppImage")
-sha256sums_x86_64=('41ca61e94611f95b6569836a1c9a48184547bb5abc55b7ef9b906feacc1ffa93'
+sha256sums_x86_64=('cc85f9f89fddd87cd6ea93399909536afaa3146d75f724a3767c9f8154ac23b2'
                    'e36f44c1fb0b0f0db14a6f35a1808ca85b5d353fc7c662c0b808a4de79987ea1')
 
 package() {
