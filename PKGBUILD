@@ -2,7 +2,7 @@
 
 pkgname=cursor-bin
 pkgver=0.39.0  # Updated to the latest version
-pkgrel=2
+pkgrel=3
 pkgdesc="Cursor App - AI-first coding environment"
 arch=('x86_64')
 url="https://www.cursor.com/"
@@ -36,7 +36,7 @@ Exec=/usr/bin/cursor --no-sandbox %U
 Terminal=false
 Type=Application
 Icon=cursor
-StartupWMClass=Cursor
+StartupWMClass=cursor-url-handler
 X-AppImage-Version=${pkgver}
 MimeType=x-scheme-handler/cursor;
 Categories=Utility;
