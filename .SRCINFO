@@ -10,7 +10,7 @@ pkgbase = cursor-bin
 	options = !strip
 	source_x86_64 = cursor-0.39.6.AppImage::https://downloader.cursor.sh/linux/appImage/x64
 	source_x86_64 = cursor.png
-	sha256sums_x86_64 = dd324b7eb05df93c8556aa26992aacf2770da43147679bfc4862f86fad906144
+	sha256sums_x86_64 = 86e653cc8645018b4644c857182fb5b1dd25dace7dd7742458cf908c2b6c125d
 	sha256sums_x86_64 = e36f44c1fb0b0f0db14a6f35a1808ca85b5d353fc7c662c0b808a4de79987ea1
 
 pkgname = cursor-bin

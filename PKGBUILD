@@ -14,7 +14,7 @@ source_x86_64=(
     "cursor.png"
 )
 noextract=("cursor-${pkgver}.AppImage")
-sha256sums_x86_64=('dd324b7eb05df93c8556aa26992aacf2770da43147679bfc4862f86fad906144'
+sha256sums_x86_64=('86e653cc8645018b4644c857182fb5b1dd25dace7dd7742458cf908c2b6c125d'
                    'e36f44c1fb0b0f0db14a6f35a1808ca85b5d353fc7c662c0b808a4de79987ea1')
 
 package() {
