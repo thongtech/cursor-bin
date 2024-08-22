@@ -1,16 +1,16 @@
 pkgbase = cursor-bin
 	pkgdesc = Cursor App - AI-first coding environment
-	pkgver = 0.39.6
+	pkgver = 0.40.0
 	pkgrel = 9
 	url = https://www.cursor.com/
 	arch = x86_64
 	license = custom:Proprietary
 	depends = fuse2
-	noextract = cursor-0.39.6.AppImage
+	noextract = cursor-0.40.0.AppImage
 	options = !strip
-	source_x86_64 = cursor-0.39.6.AppImage::https://downloader.cursor.sh/linux/appImage/x64
+	source_x86_64 = cursor-0.40.0.AppImage::https://downloader.cursor.sh/linux/appImage/x64
 	source_x86_64 = cursor.png
-	sha256sums_x86_64 = 86e653cc8645018b4644c857182fb5b1dd25dace7dd7742458cf908c2b6c125d
+	sha256sums_x86_64 = ed506ef9880659848c64acc1735aaa4fc8cfb3901b34f8914fa1e0ef843dfc3c
 	sha256sums_x86_64 = e36f44c1fb0b0f0db14a6f35a1808ca85b5d353fc7c662c0b808a4de79987ea1
 
 pkgname = cursor-bin
