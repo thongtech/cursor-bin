@@ -5,12 +5,9 @@ pkgbase = cursor-bin
 	url = https://www.cursor.com/
 	arch = x86_64
 	license = custom:Proprietary
-	depends = fuse2
-	noextract = cursor-0.40.4-build-2409052yfcjagw2-x86_64.AppImage
-	options = !strip
-	source_x86_64 = https://download.todesktop.com/230313mzl4w4u92/cursor-0.40.4-build-2409052yfcjagw2-x86_64.AppImage
-	source_x86_64 = cursor.png
-	sha512sums_x86_64 = 89db800975b565d6c1bbfb9ea58d491d4992cb3d827d092d7277e48260fddf5841e59b5ffec152339cdb47934687b2d93f115a9fd574ecac3ef17666d46848fe
-	sha512sums_x86_64 = f948c5718c2df7fe2cae0cbcd95fd3010ecabe77c699209d4af5438215daecd74b08e03d18d07a26112bcc5a80958105fda724768394c838d08465fce5f473e7
+	source = https://download.todesktop.com/230313mzl4w4u92/cursor-0.40.4-build-2409052yfcjagw2-x86_64.AppImage
+	source = cursor.sh
+	sha512sums = 89db800975b565d6c1bbfb9ea58d491d4992cb3d827d092d7277e48260fddf5841e59b5ffec152339cdb47934687b2d93f115a9fd574ecac3ef17666d46848fe
+	sha512sums = ff0837ca96b4b11d17484f4c70ab41bb7caebb7e9e7b0e14ed844284126695961eac2b1303c4d81d63c33fccef2777b0790810f9bc99aebf1a62e8701a9d99a1
 
 pkgname = cursor-bin
