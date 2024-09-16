@@ -38,7 +38,7 @@ package() {
     cp -Lr "${srcdir}/squashfs-root/${_pkgname}.desktop" "${pkgdir}/usr/share/applications/"
     
     sed -i 's|^Exec=AppRun --no-sandbox %U|Exec='"$_pkgname"' --no-sandbox %U|' "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
-    sed -i 's/StartupWMClass=Cursor/StartupWMClass=cursor/g' "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+    sed -i 's/StartupWMClass=Cursor/StartupWMClass=cursor-url-handler/g' "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
 
     # Copy icons
     mkdir -p "${pkgdir}/usr/share/icons/hicolor/"{128x128,256x256,512x512}"/apps/"
