@@ -1,16 +1,16 @@
 pkgname=cursor-bin
 _pkgname=cursor
-pkgver=0.40.4
+pkgver=0.41.2
 pkgrel=1
 pkgdesc="Cursor App - AI-first coding environment"
 arch=('x86_64')
 url="https://www.cursor.com/"
 license=('custom:Proprietary')
 
-_source_filename="cursor-0.40.4-build-2409052yfcjagw2-x86_64.AppImage"
+_source_filename="cursor-0.41.2-build-240921llnho65ov-x86_64.AppImage"
 source=("https://download.todesktop.com/230313mzl4w4u92/${_source_filename}"
         "${_pkgname}.sh")
-sha512sums=('89db800975b565d6c1bbfb9ea58d491d4992cb3d827d092d7277e48260fddf5841e59b5ffec152339cdb47934687b2d93f115a9fd574ecac3ef17666d46848fe'
+sha512sums=('596321ef45324c325268f55057df11d20b0c7423f041827215339f30c83f01dea72a83f44556f52cddfc01ac19e282ac2f11cfd32ca140a1d5fccf76d0f671f2'
             'ff0837ca96b4b11d17484f4c70ab41bb7caebb7e9e7b0e14ed844284126695961eac2b1303c4d81d63c33fccef2777b0790810f9bc99aebf1a62e8701a9d99a1')
 
 prepare() {
