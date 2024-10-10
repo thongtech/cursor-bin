@@ -1,6 +1,6 @@
 pkgname=cursor-bin
 _pkgname=cursor
-pkgver=0.41.3
+pkgver=0.42.0
 pkgrel=1
 pkgdesc="Cursor App - AI-first coding environment"
 arch=('x86_64')
